@@ -48,7 +48,9 @@ resource "aws_cloudwatch_event_rule" "cron_schedule" {
   name                = "uptime_monitor_cron_rule"
   description         = "Disparador programado para ejecutar el monitor cada 5 minutos"
   schedule_expression = "rate(5 minutes)"
+  state               = "DISABLED"  # <--- ¡AÑADE ESTA LÍNEA!
 }
+
 
 # 6. Vinculación entre EventBridge y la Función Lambda
 resource "aws_cloudwatch_event_target" "lambda_target" {
