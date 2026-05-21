@@ -67,3 +67,5 @@ resource "aws_lambda_permission" "allow_eventbridge_invocation" {
   principal     = "events.amazonaws.com"
   source_arn    = aws_cloudwatch_event_rule.cron_schedule.arn
 }
+
+# 5. Creación del Evento Recurrente en EventBridge (Mecanismo de reloj)
